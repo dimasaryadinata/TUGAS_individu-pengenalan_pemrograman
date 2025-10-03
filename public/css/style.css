@@ -1,0 +1,494 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* ======================================= */
+/* CSS GLOBAL & RESET            */
+/* ======================================= */
+
+:root {
+    --primary: #4caf50; /* Hijau sebagai warna utama */
+    --bg-color: #1a1a1a; /* Warna latar belakang gelap */
+    --text-color: #f0f0f0; /* Warna teks terang */
+    --card-bg: #222; /* Warna latar belakang kartu/konten */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+}
+
+/* Utilitas */
+.btn {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 1rem 3rem;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: var(--primary);
+    border-radius: 0.5rem;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+/* Mengubah tombol di kartu produk agar tidak langsung ke form */
+.product-card .btn {
+    cursor: pointer;
+}
+
+section {
+    padding: 8rem 7% 1.4rem;
+}
+
+/* ======================================= */
+/* NAVBAR                   */
+/* ======================================= */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.4rem 7%;
+    background-color: rgba(0, 0, 0, 0.85);
+    border-bottom: 1px solid #333;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+.navbar-logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+.navbar-logo span {
+    color: var(--primary);
+}
+
+.navbar-nav a {
+    color: var(--text-color);
+    display: inline-block;
+    font-size: 1rem;
+    margin: 0 1rem;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+/* Hover effect */
+.navbar-nav a:hover {
+    color: var(--primary);
+}
+
+.navbar-extra a {
+    color: var(--text-color);
+    margin: 0 0.5rem;
+}
+
+.navbar-extra a:hover {
+    color: var(--primary);
+}
+
+#hamburger-menu {
+    display: none;
+}
+
+/* ======================================= */
+/* HERO SECTION               */
+/* ======================================= */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20230519/pngtree-an-image-of-a-video-game-controller-that-consists-of-many-image_2573766.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.hero::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        0deg,
+        var(--bg-color) 3%,
+        rgba(0, 0, 0, 0.5) 25%,
+        rgba(0, 0, 0, 0) 50%
+    );
+}
+
+.hero .content {
+    position: relative;
+    z-index: 1;
+    max-width: 60rem;
+    padding: 0 2rem;
+}
+
+.hero .content h1 {
+    font-size: 4em;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    line-height: 1.2;
+}
+
+.hero .content h1 span {
+    color: var(--primary);
+}
+
+.hero .content p {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    line-height: 1.5;
+    font-weight: 200;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* ======================================= */
+/* PRODUCT SECTION            */
+/* ======================================= */
+.products {
+    text-align: center;
+}
+
+.products h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+    border-bottom: 2px solid var(--primary);
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+.product-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.product-card {
+    background-color: var(--card-bg);
+    border-radius: 0.8rem;
+    padding: 2rem;
+    text-align: center;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    width: 100%;
+    max-height: 150px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.product-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+}
+
+.product-card .price {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    color: #fff;
+}
+
+/* ======================================= */
+/* CONTACT SECTION (Form)            */
+/* ======================================= */
+.contact h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--text-color);
+    border-bottom: 2px solid var(--primary);
+    display: inline-block;
+    padding-bottom: 0.5rem;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.contact .row {
+    display: flex;
+    margin-top: 2rem;
+    background-color: var(--card-bg);
+    border-radius: 0.8rem;
+    overflow: hidden;
+}
+
+.contact .row .map {
+    flex: 1 1 45rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+.contact .row form {
+    flex: 1 1 40rem;
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.contact .row form .input-group {
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    background-color: var(--bg-color);
+    border: 1px solid #444;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.contact .row form .input-group input {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    background: none;
+    color: var(--text-color);
+}
+
+.contact .row form .input-group i {
+    margin-right: 1rem;
+    color: var(--primary);
+}
+
+.contact .row form .btn {
+    background-color: var(--primary);
+    color: #fff;
+    cursor: pointer;
+}
+
+.nyala {
+    cursor: pointer;
+}
+.nyala :hover {
+    color: aqua;
+}
+
+/* ======================================= */
+/* MODAL POP-UP CSS BARU             */
+/* ======================================= */
+.modal {
+    display: none; /* Default: Sembunyikan */
+    position: fixed;
+    z-index: 10000; /* Harus lebih tinggi dari navbar */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9); /* Overlay gelap */
+}
+
+.modal-content {
+    background-color: var(--card-bg);
+    margin: 10% auto; /* Jarak dari atas dan tengah */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 70%;
+    max-width: 500px;
+    border-radius: 10px;
+    position: relative;
+    text-align: left;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.modal-content img {
+    max-height: 250px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.modal-content h3 {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.modal-content .price {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+
+.modal-content p {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    font-size: 1rem;
+}
+
+.modal-content .close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.modal-content .close-btn:hover,
+.modal-content .close-btn:focus {
+    color: var(--primary);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-content .modal-btn-contact {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    color: #fff;
+    background-color: var(--primary);
+    border-radius: 0.5rem;
+    text-align: center;
+    transition: background-color 0.2s;
+}
+
+.modal-content .modal-btn-contact:hover {
+    background-color: #388e3c; /* Sedikit lebih gelap dari primary */
+}
+
+/* ======================================= */
+/* FOOTER                   */
+/* ======================================= */
+footer {
+    background-color: #000;
+    text-align: center;
+    padding: 3rem 0;
+    margin-top: 3rem;
+    border-top: 1px solid #333;
+}
+
+footer .socials {
+    padding: 1rem 0;
+}
+
+footer .socials a {
+    color: var(--text-color);
+    margin: 0 0.5rem;
+}
+
+footer .socials a:hover {
+    color: var(--primary);
+}
+
+footer .links {
+    margin-bottom: 1rem;
+}
+
+footer .links a {
+    color: var(--text-color);
+    padding: 0.7rem 1rem;
+}
+
+footer .credit {
+    font-size: 0.8rem;
+}
+
+footer .credit a {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* ======================================= */
+/* MEDIA QUERIES (RESPONSIVE)               */
+/* ======================================= */
+
+/* Laptop */
+@media (max-width: 1366px) {
+    html {
+        font-size: 75%;
+    }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    html {
+        font-size: 62.5%;
+    }
+
+    #hamburger-menu {
+        display: inline-block;
+    }
+
+    .navbar .navbar-nav {
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        background-color: #000;
+        width: 30rem;
+        height: 100vh;
+        transition: 0.3s;
+    }
+
+    .navbar .navbar-nav.active {
+        right: 0;
+    }
+
+    .navbar .navbar-nav a {
+        color: var(--text-color);
+        display: block;
+        margin: 1.5rem;
+        padding: 0.5rem;
+        font-size: 2rem;
+    }
+
+    .hero .content h1 {
+        font-size: 3em;
+    }
+
+    .contact .row {
+        flex-wrap: wrap;
+    }
+
+    .contact .row .map {
+        height: 30rem;
+    }
+
+    .contact .row form {
+        padding: 2rem;
+    }
+
+    .modal-content {
+        margin: 5% auto;
+        width: 90%;
+    }
+}
+
+/* Mobile Phone */
+@media (max-width: 450px) {
+    html {
+        font-size: 55%;
+    }
+}

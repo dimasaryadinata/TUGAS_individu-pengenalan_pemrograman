@@ -1,0 +1,145 @@
+/* ==================================== */
+/* 1. VARIABEL DASAR & RESET */
+/* ==================================== */
+:root {
+    --primary-color: #f39c12; /* Warna Oranye Emas (Mirip logo DimasAkun) */
+    --secondary-color: #333; /* Warna gelap utama */
+    --background-dark: #1f2833; /* Background sangat gelap */
+    --card-dark: #2c3a47; /* Background container/card */
+    --text-light: #ecf0f1; /* Teks terang */
+    --input-bg: #475a6b; /* Background input lebih gelap */
+    --shadow-color: rgba(0, 0, 0, 0.4);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* ==================================== */
+/* 2. CONTAINER LOGIN */
+/* ==================================== */
+.login-container {
+    background: var(--card-dark);
+    padding: 40px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 10px 25px var(--shadow-color);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.login-container:hover {
+    transform: translateY(-5px);
+}
+
+.login-container h1 {
+    color: var(--primary-color);
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.login-container p {
+    color: #bdc3c7;
+    margin-bottom: 30px;
+    font-size: 1em;
+}
+
+/* ==================================== */
+/* 3. INPUT FORM */
+/* ==================================== */
+.input-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-light);
+    font-size: 0.9em;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 8px;
+    background-color: var(--input-bg);
+    color: var(--text-light);
+    font-size: 1em;
+    transition: all 0.3s ease;
+}
+
+.input-group input::placeholder {
+    color: #95a5a6;
+}
+
+.input-group input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 5px rgba(243, 156, 18, 0.5);
+    background-color: #3a4c5d; /* Sedikit lebih terang saat fokus */
+    outline: none;
+}
+
+/* ==================================== */
+/* 4. TOMBOL (BUTTON) */
+/* ==================================== */
+.login-button {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-size: 1.1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 10px rgba(243, 156, 18, 0.4);
+    transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.login-button:hover {
+    background-color: #e67e22; /* Slightly darker orange */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(243, 156, 18, 0.6);
+}
+
+.login-button:active {
+    transform: translateY(0);
+}
+
+/* ==================================== */
+/* 5. FOOTER DAN LINK */
+/* ==================================== */
+.footer-links {
+    margin-top: 25px;
+    font-size: 0.9em;
+}
+
+.footer-links a {
+    color: #95a5a6;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: var(--primary-color);
+    text-decoration: underline;
+}
